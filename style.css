@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    /*padding: 20px;*/
+    background: #23252f;
+}
+
+.column {
+    float: left;
+    width: 40%;
+      /*flex: 1;*/
+    padding: 30px;
+
+    /*border: 1px solid #ccc;*/
+    /*margin: 5px;*/
+    box-sizing: border-box;
+}
+
+.column2 {
+    float: right;
+    width: 60%;
+    /*flex: 1;*/
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 120px;
+    /*border: 1px solid #ccc;*/
+    /*margin: 5px;*/
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    /*padding: 20px;*/
+    /*border-top: 1px solid #ccc;*/
+}
+
+.cell {
+    flex: 1;
+    padding-left: 120px;
+    padding-top: 50px;
+    padding-right: 120px;
+    /*border: 1px solid #ccc;*/
+    /*box-sizing: border-box;*/
+    color: #f8f8f2;
+    background: #23252f;
+}
+
+.external-links .scholar:hover {
+    color: #2d82b7;
+}
+
+.external-links .scholar {
+    color: #326de4;
+}
+
+.external-links .linkedin {
+    color: #2d82b7;
+}
+
+.external-links .linkedin:hover {
+    color: #2d72a7;
+}
+
+.external-links .github {
+    color: honeydew;
+}
+
+.external-links .github:hover {
+    color: #44494e;
+}
+
+li {
+    text-align: justify;
+}
+
+.pub-title {
+    font-size: 15pt;
+    color: #bbdefb;
+}
+
+.pub-listing {
+    font-size: 11pt;
+    width: 100%;
+    padding-bottom: 16px;
+    padding-top: 15px;
+}
+
+.no-pad-pub-listing {
+    font-size: 11pt;
+    width: 100%;
+}
+
+.pub-conf {
+    color: honeydew;
+    /*color: #f8f8f2;*/
+    font-weight: 300;
+}
+
+.textbody {
+    text-align: justify;
+    color: honeydew;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.profile{
+    text-align: center;
+    padding: 30px 5px;
+    position: relative;
+}
+
+.profile-body{
+    text-align: center;
+    position: relative;
+    color: honeydew;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-circle {
+    border-radius: 50%;
+}
+
+.article-style {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.sec-header {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+a:link {
+  color: #bbdefb;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #326de4;
+  background-color: transparent;
+  text-decoration: underline;
+}
