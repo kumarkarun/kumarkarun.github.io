@@ -28,7 +28,7 @@ body {
     /*flex: 1;*/
     padding-top: 50px;
     padding-left: 20px;
-    padding-right: 120px;
+    padding-right: 160px;
     /*border: 1px solid #ccc;*/
     /*margin: 5px;*/
     box-sizing: border-box;
@@ -43,9 +43,9 @@ body {
 
 .cell {
     flex: 1;
-    padding-left: 120px;
+    padding-left: 160px;
     padding-top: 50px;
-    padding-right: 120px;
+    padding-right: 160px;
     /*border: 1px solid #ccc;*/
     /*box-sizing: border-box;*/
     color: #f8f8f2;
@@ -140,6 +140,7 @@ li {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
+    font-size: large;
 }
 
 .sec-header {
