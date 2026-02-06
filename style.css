@@ -92,77 +92,154 @@ h2 {
     margin-top: 20px;
 }
 
-.publications {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px; /* increased from 16px */
+/* Publications grid layout */
+.pub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 
-.publications li {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-/* Enhanced lighter publication tiles */
+/* Enhanced publication tiles */
 .pub-tile {
-  display: block;
-  width: 100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 20px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-  margin-bottom: 8px; /* added space after each tile */
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 /* Hover effect */
 .pub-tile:hover,
 .pub-tile:focus {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(58, 156, 237, 0.25);
-  border-color: rgba(139, 250, 220, 0.4);
-  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
-  outline: none;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(58, 156, 237, 0.25);
+    border-color: rgba(139, 250, 220, 0.4);
+    background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
+    outline: none;
 }
-/* Typography - reduced sizes */
+
+/* Typography */
 .pub-tile h3 {
-  margin: 0 0 8px 0;
-  color: #bbdefb;
-  font-size: 0.98rem; /* reduced from 1.12rem */
-  font-weight: 600;
-  line-height: 1.35;
+    margin: 0 0 8px 0;
+    color: #bbdefb;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.35;
 }
 
 .pub-tile .authors {
-  margin: 0 0 6px 0;
-  color: #c8e1e8;
-  font-size: 0.85rem; /* reduced from 0.95rem */
+    margin: 0 0 6px 0;
+    color: #c8e1e8;
+    font-size: 0.85rem;
 }
 
 .pub-tile .venue {
-  margin: 0;
-  color: #c5d4ec;
-  font-style: italic;
-  font-size: 0.8rem; /* reduced from 0.9rem */
+    margin: 0;
+    color: #c5d4ec;
+    font-style: italic;
+    font-size: 0.8rem;
 }
 
-/* Responsive */
-@media (max-width: 720px) {
-  .publications { gap: 20px; }
-  .pub-tile { padding: 16px; border-radius: 12px; }
-  .pub-tile h3 { font-size: 0.92rem; }
-  .pub-tile .authors { font-size: 0.82rem; }
-  .pub-tile .venue { font-size: 0.78rem; }
-}
-
+/* Small screens */
 @media (max-width: 420px) {
-  .publications { gap: 16px; }
-  .pub-tile { padding: 14px; }
-  .pub-tile h3 { font-size: 0.88rem; }
+    .pub-grid { gap: 16px; }
+    .pub-tile { padding: 14px; }
+    .pub-tile h3 { font-size: 0.88rem; }
+}
+
+@media (max-width: 720px) {
+    .pub-grid { gap: 20px; }
+    .pub-tile { padding: 16px; border-radius: 12px; }
+    .pub-tile h3 { font-size: 0.92rem; }
+    .pub-tile .authors { font-size: 0.82rem; }
+    .pub-tile .venue { font-size: 0.78rem; }
+}
+
+/* Medium screens - 2 column grid */
+@media (min-width: 900px) {
+    .pub-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    body {
+        padding: 60px 40px;
+    }
+
+    .container {
+        max-width: 1100px;
+        padding: 60px;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .tagline {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .about {
+        font-size: 1.1rem;
+    }
+
+    .social-links a {
+        font-size: 2.2em;
+        margin: 0 20px;
+    }
+
+    .pub-tile h3 {
+        font-size: 1.1rem;
+    }
+
+    .pub-tile .authors {
+        font-size: 0.95rem;
+    }
+
+    .pub-tile .venue {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra large screens - 3 column grid */
+@media (min-width: 1400px) {
+    .pub-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1300px;
+        padding: 80px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .about {
+        font-size: 1.2rem;
+    }
+
+    .pub-tile {
+        padding: 28px;
+    }
 }
