@@ -94,9 +94,8 @@ h2 {
 
 /* Publications grid layout */
 .pub-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Enhanced publication tiles */
@@ -111,6 +110,11 @@ h2 {
     color: inherit;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    margin-bottom: 24px;
+}
+
+.pub-tile:last-child {
+    margin-bottom: 0;
 }
 
 /* Hover effect */
@@ -146,26 +150,28 @@ h2 {
 }
 
 /* Small screens */
-@media (max-width: 420px) {
-    .pub-grid { gap: 16px; }
-    .pub-tile { padding: 14px; }
-    .pub-tile h3 { font-size: 0.88rem; }
-}
-
 @media (max-width: 720px) {
-    .pub-grid { gap: 20px; }
-    .pub-tile { padding: 16px; border-radius: 12px; }
+    .pub-tile {
+        padding: 16px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
     .pub-tile h3 { font-size: 0.92rem; }
     .pub-tile .authors { font-size: 0.82rem; }
     .pub-tile .venue { font-size: 0.78rem; }
 }
 
-/* Medium screens - 2 column grid */
-@media (min-width: 900px) {
-    .pub-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+@media (max-width: 720px) {
+    .pub-tile {
+        padding: 14px;
+        margin-bottom: 16px;
     }
+    .pub-tile h3 { font-size: 0.88rem; }
+}
+
+/* Medium screens */
+@media (min-width: 900px) {
+    /* No specific .pub-tile styles needed here anymore */
 }
 
 /* Large screens */
@@ -218,11 +224,10 @@ h2 {
     }
 }
 
-/* Extra large screens - 3 column grid */
+
+/* Extra large screens */
 @media (min-width: 1400px) {
-    .pub-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    /* No specific .pub-tile styles needed here anymore */
 }
 
 @media (min-width: 1600px) {
