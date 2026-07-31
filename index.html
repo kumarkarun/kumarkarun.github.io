@@ -1,98 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karun Kumar | AI Researcher</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karun Kumar | AI Researcher</title>
+<meta name="description" content="Karun Kumar — AI Researcher at Comcast Applied AI, leading Speech Machine Learning research. Speech processing, multi-modal learning, and interpretability in deep learning.">
+<meta name="theme-color" content="#1b2a4a">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Karun Kumar | AI Researcher">
+<meta property="og:description" content="AI Researcher at Comcast Applied AI, leading Speech Machine Learning research.">
+<meta property="og:image" content="images/pic.jpeg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b2a4a'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23e8c77d' text-anchor='middle'%3EKK%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#fbfaf7;
+    --surface:#ffffff;
+    --ink:#1b2a4a;
+    --ink-soft:#3d4a63;
+    --muted:#6b7385;
+    --accent:#b8843f;
+    --accent-soft:#f3e6d0;
+    --border:#e7e3da;
+    --shadow: 0 1px 2px rgba(27,42,74,0.04), 0 6px 20px rgba(27,42,74,0.05);
+    --maxw: 760px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#11151c;
+      --surface:#171c25;
+      --ink:#eef1f6;
+      --ink-soft:#c7cddb;
+      --muted:#8b93a7;
+      --accent:#e0b571;
+      --accent-soft:#2a2417;
+      --border:#2a3140;
+      --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 6px 24px rgba(0,0,0,0.3);
+    }
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink-soft);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:16.5px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  .skip-link{
+    position:absolute; left:-999px; top:auto;
+    background:var(--ink); color:#fff; padding:10px 16px; border-radius:6px; z-index:100;
+  }
+  .skip-link:focus{ left:16px; top:16px; }
+
+  main{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+
+  header.hero{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    margin-bottom:40px;
+  }
+
+  .avatar{
+    width:104px;
+    height:104px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:3px solid var(--surface);
+    box-shadow:var(--shadow);
+  }
+
+  .hero-text h1{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-weight:700;
+    font-size:2rem;
+    color:var(--ink);
+    margin:0 0 4px;
+    letter-spacing:-0.01em;
+  }
+
+  .hero-text .role{
+    font-size:1.05rem;
+    color:var(--muted);
+    margin:0;
+  }
+
+  .hero-text .role strong{
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  nav.links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:28px 0 48px;
+  }
+
+  nav.links a{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:var(--surface);
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    font-weight:500;
+    box-shadow:var(--shadow);
+    transition:transform .15s ease, border-color .15s ease, color .15s ease;
+  }
+
+  nav.links a:hover{
+    text-decoration:none;
+    border-color:var(--accent);
+    color:var(--accent);
+    transform:translateY(-1px);
+  }
+
+  nav.links svg{ width:15px; height:15px; flex-shrink:0; }
+
+  section{ margin-bottom:52px; }
+
+  section > h2{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.32rem;
+    font-weight:600;
+    color:var(--ink);
+    margin:0 0 18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .about p{ margin:0 0 14px; color:var(--ink-soft); }
+  .about p:last-child{ margin-bottom:0; }
+
+  .about .email-line{
+    font-size:0.94rem;
+    color:var(--muted);
+  }
+
+  .pub-group{ margin-bottom:32px; }
+
+  .pub-group h3{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+
+  ol.pub-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .pub{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+    box-shadow:var(--shadow);
+    transition:border-color .15s ease;
+  }
+
+  .pub:hover{ border-color:var(--accent); }
+
+  .pub-title{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:1.02rem;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.4;
+  }
+
+  .pub-title a{ color:inherit; }
+  .pub-title a:hover{ color:var(--accent); }
+
+  .pub-authors{
+    font-size:0.92rem;
+    color:var(--muted);
+    margin-top:6px;
+  }
+
+  .pub-authors .me{ color:var(--ink-soft); font-weight:600; }
+
+  .pub-meta{
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .badge{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    padding:3px 10px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent);
+  }
+
+  .badge.award::before{ content:"\1F3C6  "; }
+
+  footer{
+    text-align:center;
+    font-size:0.85rem;
+    color:var(--muted);
+    padding-top:24px;
+    border-top:1px solid var(--border);
+  }
+
+  footer a{ color:var(--muted); }
+  footer a:hover{ color:var(--accent); }
+
+  @media (max-width:520px){
+    header.hero{ flex-direction:column; text-align:center; gap:16px; }
+    .avatar{ width:120px; height:120px; }
+    main{ padding:40px 18px 72px; }
+  }
+
+  @media print{
+    nav.links, .avatar{ display:none; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <img class="avatar" src="images/pic.jpeg" alt="Karun Kumar">
-            <h1>Karun Kumar</h1>
-            <p class="tagline">Comcast Applied AI</p>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=pf3DmSsAAAAJ&hl=en&oi=ao"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://github.com/kumarkarun"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kumarkarun"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p class="about">
-                I am part of Comcast Applied AI Research group. I lead the Speech Machine Learning research at Comcast.
-                My research and work focuses on speech processing, multi-modal learning and interpretability in deep learning.
-                <br><br>
-                Our work has won the Best Paper Award at ACL 2023.
-                <br><br>
-                I completed my MS in Computer Science from Syracuse University.
-                <br><br>
-                Email :  karun_kumar at comcast dot com
-            </p>
-        </div>
+<main id="main">
 
-        <!-- Replace Publications section in `mysite3/index.html` with this -->
-        <div class="section">
-          <h2>Publications</h2>
-          <div class="pub-grid">
-            <a class="pub-tile" href="https://arxiv.org/pdf/2509.10452" role="article">
-              <h3>WhisTLE: Deeply Supervised, Text-Only Domain Adaptation for Pretrained Speech Recognition Transformers</h3>
-              <p class="authors">Akshat Pandey, <strong>Karun Kumar</strong>, Raphael Tang</p>
-              <p class="venue">arXiv</p>
-            </a>
-
-            <a class="pub-tile" href="https://patents.google.com/patent/US20230215459A1" role="article">
-              <h3>Methods and Systems for Voice Control</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, ..., G. Craig Murray</p>
-              <p class="venue">US Patent App. 17/566,036</p>
-            </a>
-
-            <a class="pub-tile" href="https://aclanthology.org/2023.acl-long.310/" role="article">
-              <h3>What the DAAM: Interpreting Stable Diffusion Using Cross Attention</h3>
-              <p class="authors">Raphael Tang, Linqing Liu, Akshat Pandey, ..., <strong>Karun Kumar</strong>, Pontus Stenetorp, Jimmy Lin, Ferhan Ture</p>
-              <p class="venue">ACL 2023 <span class="badge">Best Paper Award</span></p>
-            </a>
-
-            <a class="pub-tile" href="https://patents.google.com/patent/US20230142836A1/en" role="article">
-              <h3>Predictive Query Execution</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, ..., G. Craig Murray</p>
-              <p class="venue">US Patent App. 17/454,234</p>
-            </a>
-
-            <a class="pub-tile" href="https://patents.google.com/patent/US20240203397A1/en" role="article">
-              <h3>Systems and Methods for Improved Automatic Speech Recognition Systems</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, ..., Craig Murray</p>
-              <p class="venue">US Patent App. 18/066,174</p>
-            </a>
-
-            <a class="pub-tile" href="https://patents.google.com/patent/US20240331703A1/en" role="article">
-              <h3>Systems and Methods For Processing Voice Queries Of Different Duration</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, ..., Ferhan Ture</p>
-              <p class="venue">US Patent App. 18/193,212</p>
-            </a>
-
-            <a class="pub-tile" href="https://aclanthology.org/2022.emnlp-industry.29/" role="article">
-              <h3>SpeechNet: Weakly Supervised, End-to-End Speech Recognition at Industrial Scale</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, Gefei Yang, Akshat Pandey, ..., Craig Murray, Ferhan Ture, Jimmy Lin</p>
-              <p class="venue">EMNLP 2022 Industry</p>
-            </a>
-
-            <a class="pub-tile" href="https://cs.uwaterloo.ca/~jimmylin/publications/Tang_etal_ICASSP2022.pdf" role="article">
-              <h3>Temporal Early Exiting for Streaming Speech Commands Recognition</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, ..., G. Craig Murray, Jimmy Lin</p>
-              <p class="venue">ICASSP 2022</p>
-            </a>
-
-            <a class="pub-tile" href="https://aclanthology.org/2021.emnlp-main.68/" role="article">
-              <h3>Voice Query Auto Completion</h3>
-              <p class="authors">Raphael Tang, <strong>Karun Kumar</strong>, Kendra Chalkley, Ji Xin, ..., G. Craig Murray, Jimmy Lin</p>
-              <p class="venue">EMNLP 2021 (Oral)</p>
-            </a>
-          </div>
-        </div>
+  <header class="hero">
+    <img class="avatar" src="images/pic.jpeg" alt="Portrait of Karun Kumar">
+    <div class="hero-text">
+      <h1>Karun Kumar</h1>
+      <p class="role">AI Researcher, <strong>Comcast Applied AI</strong></p>
     </div>
+  </header>
+
+  <nav class="links" aria-label="Profile links">
+    <a href="https://scholar.google.com/citations?user=pf3DmSsAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.667 3.5V19l7.333 4 7.333-4v-6l2-1.5V17h1V9.5z"/></svg>
+      Google Scholar
+    </a>
+    <a href="https://github.com/kumarkarun" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.43 3.44 10.03 8.2 11.66.6.11.82-.27.82-.6l-.02-2.1c-3.34.75-4.04-1.66-4.04-1.66-.55-1.44-1.34-1.82-1.34-1.82-1.1-.77.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.08 1.9 2.82 1.35 3.5 1.03.11-.8.42-1.35.77-1.66-2.67-.31-5.47-1.37-5.47-6.1 0-1.35.46-2.45 1.23-3.32-.12-.31-.53-1.57.12-3.28 0 0 1-.33 3.3 1.27a11.2 11.2 0 0 1 6 0c2.3-1.6 3.3-1.27 3.3-1.27.65 1.71.24 2.97.12 3.28.77.87 1.23 1.97 1.23 3.32 0 4.74-2.8 5.79-5.48 6.1.43.38.81 1.13.81 2.28l-.01 3.38c0 .33.22.72.83.6C20.57 22.32 24 17.72 24 12.3 24 5.5 18.63 0 12 0z"/></svg>
+      GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/kumarkarun" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+      LinkedIn
+    </a>
+    <a href="mailto:karun_kumar@comcast.com">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm19.38 2.04L12 12.5 2.62 6.04A1 1 0 0 0 2 6.94V6l10 6.75L22 6v.94a1 1 0 0 0-.62-.9z"/></svg>
+      Email
+    </a>
+  </nav>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>I am part of Comcast's Applied AI Research group, where I lead Speech Machine Learning research. My work focuses on speech processing, multi-modal learning, and interpretability in deep learning &mdash; including research recognized with the <strong>Best Paper Award at ACL 2023</strong>.</p>
+    <p>I completed my MS in Computer Science at Syracuse University.</p>
+    <p class="email-line">Reach me at <a href="mailto:karun_kumar@comcast.com">karun_kumar [at] comcast [dot] com</a></p>
+  </section>
+
+  <section class="publications">
+    <h2>Publications &amp; Patents</h2>
+
+    <div class="pub-group">
+      <h3>Papers</h3>
+      <ol class="pub-list">
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2605.20299" target="_blank" rel="noopener">Mechanisms of Misgeneralization in Physical Sequence Modeling</a></div>
+          <div class="pub-authors">Kento Nishi, Raphael Tang, <span class="me">Karun Kumar</span>, Core Francisco Park, Hidenori Tanaka</div>
+          <div class="pub-meta"><span class="badge">arXiv &middot; 2026</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2509.10452" target="_blank" rel="noopener">WhisTLE: Deeply Supervised, Text-Only Domain Adaptation for Small Pretrained Speech Recognition Transformers</a></div>
+          <div class="pub-authors">Akshat Pandey, <span class="me">Karun Kumar</span>, Raphael Tang</div>
+          <div class="pub-meta"><span class="badge">arXiv &middot; 2025</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://aclanthology.org/2023.acl-long.310/" target="_blank" rel="noopener">What the DAAM: Interpreting Stable Diffusion Using Cross Attention</a></div>
+          <div class="pub-authors">Raphael Tang, Linqing Liu, Akshat Pandey, Zhiying Jiang, Gefei Yang, <span class="me">Karun Kumar</span>, Pontus Stenetorp, Jimmy Lin, Ferhan Ture</div>
+          <div class="pub-meta"><span class="badge award">ACL 2023 &middot; Best Paper Award</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://aclanthology.org/2022.emnlp-industry.29/" target="_blank" rel="noopener">SpeechNet: Weakly Supervised, End-to-End Speech Recognition at Industrial Scale</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Gefei Yang, Akshat Pandey, Yajie Mao, Vladislav Belyaev, Madhuri Emmadi, Craig Murray, Ferhan Ture, Jimmy Lin</div>
+          <div class="pub-meta"><span class="badge">EMNLP 2022 &middot; Industry Track</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://cs.uwaterloo.ca/~jimmylin/publications/Tang_etal_ICASSP2022.pdf" target="_blank" rel="noopener">Temporal Early Exiting for Streaming Speech Commands Recognition</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, G. Craig Murray, Jimmy Lin</div>
+          <div class="pub-meta"><span class="badge">ICASSP 2022</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://aclanthology.org/2021.emnlp-main.68/" target="_blank" rel="noopener">Voice Query Auto Completion</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Kendra Chalkley, Ji Xin, Liming Zhang, Wenyan Li, Gefei Yang, Yajie Mao, Junho Shin, Geoffrey Craig Murray, Jimmy Lin</div>
+          <div class="pub-meta"><span class="badge">EMNLP 2021 &middot; Oral</span></div>
+        </li>
+
+      </ol>
+    </div>
+
+    <div class="pub-group">
+      <h3>Patents</h3>
+      <ol class="pub-list">
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://patents.google.com/patent/US12277931B2/en" target="_blank" rel="noopener">Predictive Query Execution</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Kendra Chalkley, Wenyan Li, Liming Zhang, Gefei Yang, Yajie Mao, Jun Ho Shin, Geoffrey Murray</div>
+          <div class="pub-meta"><span class="badge">US Patent 12,277,931</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://patents.google.com/patent/US20260120708A1/en" target="_blank" rel="noopener">Systems and Methods for Managing Cascading Models</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, et al.</div>
+          <div class="pub-meta"><span class="badge">US Patent App. 18/927,993</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://patents.google.com/patent/US20240331703A1/en" target="_blank" rel="noopener">Systems and Methods for Processing Voice Queries of Different Duration</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Geoffrey Craig Murray, Ferhan Ture</div>
+          <div class="pub-meta"><span class="badge">US Patent App. 18/193,212</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://patents.google.com/patent/US20240203397A1/en" target="_blank" rel="noopener">Systems and Methods for Improved Automatic Speech Recognition Systems</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Kendra Chalkley, Liming Zhang, Wenyan Li, Pamela Shapiro, Yajie Mao, Gefei Yang, Jun Ho Shin, Geoffrey Craig Murray</div>
+          <div class="pub-meta"><span class="badge">US Patent App. 18/066,174</span></div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title"><a href="https://patents.google.com/patent/US20230215459A1" target="_blank" rel="noopener">Methods and Systems for Voice Control</a></div>
+          <div class="pub-authors">Raphael Tang, <span class="me">Karun Kumar</span>, Wenyan Li, Gefei Yang, Yajie Mao, Yang Hu, Rui Min, Geoffrey Murray</div>
+          <div class="pub-meta"><span class="badge">US Patent App. 17/566,036</span></div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Karun Kumar
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
